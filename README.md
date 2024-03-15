@@ -11,3 +11,5 @@
 - include：项目的头文件
 - build：配合CMakeLists.txt文件构建C++项目，使用这个文本文件构建项目时，建议先进入build文件夹
 - CMakeLists.txt
+
+PS：由于没有使用复杂的算法，代码的注释非常少
