@@ -14,4 +14,12 @@
 
 这个项目能为你提供一个面向对象的操控Maxon直流电机的库，头文件和源文件的名称为MaxonDCMotor，它继承了Motor这个抽象类，这意味着你可以自己构建一个交流电机库，也可以直接使用本项目的MaxonDCMotor类来实现你的目的。
 
-PS：由于没有使用复杂的算法，代码的注释非常少
+PS：
+- 由于没有使用复杂的算法，代码的注释非常少
+- 其次，在openDevice等一系列方法（构造函数）中，函数的参数可以改为string类型的数据（这可能和C++的版本有关）
+- - 如果修改为string类型的对象，请向以下方法向其中添加代码，转换为char*类型的数据，才能传入给VCS_OpenDevice函数：
+#include <cstring>
+char* pDeviceName = new char[255];
+strcpy(pDeviceName, deviceName.c_str());
+...
+delete[] pDeviceName;
